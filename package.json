@@ -1,0 +1,23 @@
+{
+  "name": "helpers",
+  "version": "1.0.0",
+  "description": "Example to demonstrate helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Foust",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "^1.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "list-directory-contents": "0.0.3",
+    "mimetype": "0.0.8",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "path": "^0.12.7"
+  }
+}
