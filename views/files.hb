@@ -58,6 +58,8 @@
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
                                 <a href='{{this}}?action=download'><span class="pull-left"><i class="glyphicon glyphicon-download"></i> Download</span></a>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+                                <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span class="pull-left"><i class="glyphicon glyphicon-pencil"></i> Rename</span></a>
+                                <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
                                 <a href='{{this}}?action=delete'><span class="pull-left"><i class="glyphicon glyphicon-trash"></i> Delete</span></a>
                                 <div class="clearfix"></div>
                             </div>
@@ -97,10 +99,34 @@
       </div>
     <!-- /#wrapper -->
     </div>
+    <!-- Rename Modal -->
+    <div id="renameModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Rename</h4>
+          </div>
+          <form method="post">
+            <div class="modal-body">
+              <input type="text" name="renamename"/>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
     <!-- jQuery -->
     <script src="/js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/files.js"></script>
 </body>
 
 </html>

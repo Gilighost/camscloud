@@ -35,19 +35,21 @@
                   Upload to {{savepath}}
                 </p>
                 {{/if}}
+                {{#if uploads}}
+                  <div class="alert alert-success" role="alert">
+                    Successfully uploaded 
+                    {{#each uploads}}
+                       <kbd>{{this}}</kbd>
+                    {{/each}}
+                  </div>
+                {{/if}}
                 <!-- /.row -->
                 <form method="POST" enctype="multipart/form-data">
                   <input id="fileSelect" type="file" class="file" name="myfile" multiple/>
                   <br/>
                   <input id="uploadBtn" type="submit" value="Upload" class="btn btn-success btn-lg" disabled/>
                 </form>
-                {{#if uploads}}
-                  <br/><p>Uploaded:
-                    {{#each uploads}}
-                       <kbd>{{this}}</kbd>
-                    {{/each}}
-                  </p>
-                {{/if}}
+
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->

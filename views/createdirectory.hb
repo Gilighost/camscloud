@@ -35,6 +35,11 @@
                   Create directory at {{savepath}}
                 </p>
                 {{/if}}
+                {{#if created}}
+                  <div class="alert alert-success" role="alert">
+                    Successfully created <kbd>{{savepath}}{{created}}</kbd>
+                  </div>
+                {{/if}}
                 <!-- /.row -->
                 <form method="get">
                   <div class="input-group">
@@ -44,9 +49,6 @@
                   <input id="createBtn" type="submit" value="Create" class="btn btn-success btn-lg" disabled/>
                 </form>
                 <br/>
-                {{#if created}}
-                  <br/><p>Created: <kbd>{{created}}</kbd></p>
-                {{/if}}
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
