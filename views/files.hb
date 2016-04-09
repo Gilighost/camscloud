@@ -44,23 +44,23 @@
                 {{/if}}
                 <div class="row">
                   {{#each files}}
-                    <div class="col-lg-2 col-md-5">
+                    <div class="col-lg-2 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-lg-1">
-                                         <h3 class="panel-title"><i class="fa fa-file fa-2x"></i>&nbsp;{{this}}</h3>
+                                    <div>
+                                         <h3 style="padding: 6px 12px;"class="panel-title"><i class="glyphicon glyphicon-file"></i>&nbsp;{{this}}</h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <a href='{{this}}?action=view'><span class="pull-left"><i class="glyphicon glyphicon-eye-open"></i> View</span>
+                                <a href='{{this}}?action=view'><span data-toggle="tooltip" title="View" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-eye-open"></i></span>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href='{{this}}?action=download'><span class="pull-left"><i class="glyphicon glyphicon-download"></i> Download</span></a>
+                                <a href='{{this}}?action=download'><span data-toggle="tooltip" title="Download" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-download"></i></span></a>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span class="pull-left"><i class="glyphicon glyphicon-pencil"></i> Rename</span></a>
+                                <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href='{{this}}?action=delete'><span class="pull-left"><i class="glyphicon glyphicon-trash"></i> Delete</span></a>
+                                <a href='{{this}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -81,12 +81,14 @@
                           <div class="panel-heading">
                             <a class="btn" href='{{this.href}}'>
                               <div class="row">
-                                <h3><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;{{this.dirName}}</h3>
+                                <h3 class="panel-title"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;{{this.dirName}}</h3>
                               </div>
                             </a>
                           </div>
                           <div class="panel-footer">
-                              <a href='{{this.deletehref}}?action=delete'><span class="pull-left"><i class="glyphicon glyphicon-trash"></i> Delete</span></a>
+                              <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this.dirName}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
+                              <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+                              <a href='{{this.deletehref}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
                               <div class="clearfix"></div>
                           </div>
                       </div>
@@ -110,10 +112,11 @@
           </div>
           <form method="post">
             <div class="modal-body">
-              <input type="text" name="renamename"/>
+              <input id="newname" type="text" name="newname" autofocus/>
+              <input type="text" name="oldname" hidden/>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button id="submit_rename" type="submit" class="btn btn-primary">Submit</button>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
           </form>

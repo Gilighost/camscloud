@@ -16,8 +16,9 @@ var router = express.Router();
 var upload = multer({ dest: './tmp/' });
 
 router.get('/files', function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'), generic.renderTemplate('files'));
-
 router.get('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'),  generic.renderTemplate('files'));
+
+router.post('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/post_files'));
 
 router.get('/upload', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/upload'), generic.renderTemplate('upload'));
 router.post('/upload',

@@ -10,7 +10,7 @@ exports.logLevel = 'dev';
 
 exports.sessionSecret = 'a moose bit my sister once';
 
-exports.rootUrl = 'files'
+exports.rootUrl = 'files/'
 
 exports.rootDir = __dirname
 
