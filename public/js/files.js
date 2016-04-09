@@ -20,3 +20,7 @@ $("#newname").on('keyup', function(e){
   else
     $("#submit_rename").prop('disabled', true)
 })
+
+$("#fileSelect").change(function(e){
+  $("#uploadBtn").prop('disabled', false)
+})

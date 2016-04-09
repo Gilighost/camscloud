@@ -15,24 +15,32 @@ var router = express.Router();
 // Uploads
 var upload = multer({ dest: './tmp/' });
 
-router.get('/files', function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'), generic.renderTemplate('files'));
-router.get('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'),  generic.renderTemplate('files'));
+router.get('/files',
+            function(req, res, next){generic.requireLogin(req, res, next)},
+            require('./controllers/files'),
+            generic.renderTemplate('files'));
+router.get('/files/*',
+            function(req, res, next){generic.requireLogin(req, res, next)},
+            require('./controllers/files'),
+            generic.renderTemplate('files'));
 
-router.post('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/post_files'));
+router.post('/files/*',
+            function(req, res, next){generic.requireLogin(req, res, next)},
+            require('./controllers/post_files'),
+            generic.renderTemplate('files'));
 
 router.get('/upload', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/upload'), generic.renderTemplate('upload'));
 router.post('/upload',
+            function(req, res, next){generic.requireLogin(req, res, next)},
             upload.any('myfile'),
-            require('./controllers/upload'),
-            generic.renderTemplate('upload')
-);
+            require('./controllers/upload'));
 
 router.get('/createdirectory', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/createdirectory'), generic.renderTemplate('createdirectory'));
 
 router.post('/login',
             require('./controllers/login'),
-            generic.renderTemplate('login')
-);
+            generic.renderTemplate('login'));
+
 router.get('/login', generic.renderTemplate('login'));
 
 router.get('/logout', require('./controllers/logout'));
