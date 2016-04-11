@@ -34,9 +34,6 @@
                     <a href="{{this.href}}">> {{this.name}}</a>
                   {{/each}}
                 </p>
-                {{#if alert}}
-                  <div class="alert alert-{{alert.type}}" role="alert">{{alert.message}}</div>
-                {{/if}}
                 <!-- /.row -->
                 {{#if files}}
                   <p><kbd>Files:</kbd></p>
@@ -104,8 +101,6 @@
       </div>
     <!-- /#wrapper -->
     </div>
-
-    <!-- Modals -->
     <!-- Rename Modal -->
     <div id="renameModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -113,59 +108,15 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title"><i class="glyphicon glyphicon-pencil"></i>&nbsp;&nbsp;Rename</h4>
+            <h4 class="modal-title">Rename</h4>
           </div>
           <form method="post">
             <div class="modal-body">
-              <input  id="newname" type="text" name="newname" autofocus/>
+              <input id="newname" type="text" name="newname" autofocus/>
               <input type="text" name="oldname" hidden/>
             </div>
             <div class="modal-footer">
               <button id="submit_rename" type="submit" class="btn btn-primary">Submit</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-    <!-- upload Modal -->
-    <div id="uploadModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title"><i class="glyphicon glyphicon-open"></i>&nbsp;&nbsp;Upload File</h4>
-          </div>
-          <form action="/upload" method="post" enctype="multipart/form-data">
-            <div class="modal-body">
-                <input id="fileSelect" type="file" class="file" name="myfile" multiple/>
-            </div>
-            <div class="modal-footer">
-                <input id="uploadBtn" type="submit" value="Upload" class="btn btn-success" disabled/>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-    <!-- new directory Modal -->
-    <div id="createDirectoryModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title"><i class="glyphicon glyphicon-plus"></i> &nbsp;&nbsp;Create Directory</h4>
-          </div>
-          <form action="upload" method="post" enctype="multipart/form-data">
-            <div class="modal-body">
-                <input id="fileSelect" type="file" class="file" name="myfile" multiple/>
-            </div>
-            <div class="modal-footer">
-                <input id="uploadBtn" type="submit" value="Upload" class="btn btn-success btn-lg" disabled/>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
           </form>
