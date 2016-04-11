@@ -6,22 +6,44 @@ Additional resources used:
   -http://codepen.io/team/nclud/pen/GJpdVo for 404 page
   -Node module Mimetypes to get the mime types of files for the header
 
-Go to the URL http://localhost:8000 or http://localhost:8000/files/
 
-It will redirect you to the login page.
+Testing:
+  Go to the URL http://localhost:8000 or http://localhost:8000/files/
 
-Log in to application as any of the following:
-    Username: Cam, Password: password
-    Username: TambourineMan, Password: blowininthewind
-    Username: BTK, Password: fastdraw
+  It will redirect you to the login page.
 
-logging in will direct you to the files page which lists the contents of the root storage directory.
+  Log in to application as either of the following:
+      Username: Cam, Password: password
+      Username: TambourineMan, Password: blowininthewind
 
-Give a brief explanation of how to use your program. Assume that I already know all the information contained in this document. Suggest test scenarios that demonstrate the the correctness of your program.
-Example: Go to the URL http://localhost:8000/files/ and log in using "jane" and "peaches"; you should see a listing of the files in the cloud directory. Now visit the same URL in a second window and click "Log out"; when prompted for a new user name log in using "joe" and "summertime"; you should see the files. Return to the first window and attempt to upload a file. You should get an "unauthorized" message: Joe is not authorized to write!
-Give a brief overview of your design: What do I need to know about your project design in order to be able to read your code? How is your code organized? Again, assume I already know all the information contained in this document, and the things we've discussed in class (e.g., project layout).
-Explain the helper/partial you made, and why you you chose to implement it as a helper—why might this be useful as a helper?
-Explain any weaknesses in your project. These could be things you couldn't get working, things that were necessarily simplified for this project, things that you would do differently if you had more time, etc.
-Explain any strengths in your project. Be sure to highlight any way you went beyond the requirements.
-Be direct and to the point.
-Remember: you are trying to explain your project to me.
+  Logging in will direct you to the files page which lists the contents of the root storage directory.
+  Visit the same URL in a second window and click "Log out" in the dropdown menu from the user name in the top right.
+  Log in as
+      Username: BTK, Password: fastdraw
+
+  You should see the files, but have no way of uploading a file or creating a directory.
+
+  Return to the first window and click "Upload file".
+  It should redirect you to the Files page, with no way of uploading a file or creating a directory.
+
+Design:
+  Each request has a controller for it, which handles what should happen from there.
+  Redirects are used to make sure correct content is being shown.
+
+Partial:
+  I have several Navigation partials, one for each page, and one that the other Nav partials use
+  These are helpful because i can plug them in to any other template to give it a navigaton bar
+
+If I had more time:
+  Id get the upload/new directory done through modals rather than separate pages.
+
+Strengths:
+  -Design, I used Bootstrap for all of my templates for a professional look.
+  -I provided a way of deleting a file or directory for users with write permissions
+  -I provided a way of renaming a file or directory for users with write permissions
+    -The way I implemented this allows users to easily change which directory the file is in.
+    -The rename modal automatically highlights the name of the file user is renaming.
+  -I have a directory navigation list which shows the current path, and allows the user to click back
+    to any parent directory.
+  -If the user tries to upload a file with the same name as another file, it will get renamed
+    to a number with the file name
