@@ -22,6 +22,7 @@ router.post('/files/*',function(req, res, next){generic.requireLogin(req, res, n
 
 router.get('/upload', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/upload'), generic.renderTemplate('upload'));
 router.post('/upload',
+            function(req, res, next){generic.requireLogin(req, res, next)},
             upload.any('myfile'),
             require('./controllers/upload'),
             generic.renderTemplate('upload')

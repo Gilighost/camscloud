@@ -47,11 +47,13 @@
                     <div class="col-lg-2 col-md-6">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
+                              <a class="btn filelink" href='{{this}}?action=view'>
                                 <div class="row">
                                     <div>
-                                         <h3 style="padding: 6px 12px;"class="panel-title"><i class="glyphicon glyphicon-file"></i>&nbsp;{{this}}</h3>
+                                         <h3 class="panel-title"><i class="glyphicon glyphicon-file"></i>&nbsp;{{this}}</h3>
                                     </div>
                                 </div>
+                              </a>
                             </div>
                             <div class="panel-footer">
                                 <a href='{{this}}?action=view'><span data-toggle="tooltip" title="View" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-eye-open"></i></span>
