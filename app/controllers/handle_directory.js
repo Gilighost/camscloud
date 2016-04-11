@@ -16,7 +16,9 @@ function deleteFolderRecursive(path) {
 
 module.exports = function(req, res, next, path){
   if(req.query.action == 'delete'){
-    deleteFolderRecursive(path)
+    if(req.session.user.writePermission){
+      deleteFolderRecursive(path)
+    }
     res.redirect(req.url.split('/').slice(0, -1).join('/') + '/')
   } else if(path.slice(-1) != '/'){
       res.redirect(req.url + '/')

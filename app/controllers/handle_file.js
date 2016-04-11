@@ -7,14 +7,17 @@ module.exports = function(req, res, next, path){
     mimetype = mime.lookup(path)
     res.setHeader('Content-disposition', 'attachment; filename=' + path.split('/').slice(-1))
     res.setHeader('Content-type', mimetype)
-
     if(req.query.action == 'save'){
       var filestream = fs.createReadStream(path);
       filestream.pipe(res);
     } else if(req.query.action == 'delete'){
-      fs.unlink(path, function(err){
+      if(req.session.user.writePermission){
+        fs.unlink(path, function(err){
+          res.redirect(req.url.split('/').slice(0, -1).join('/'))
+        })
+      } else{
         res.redirect(req.url.split('/').slice(0, -1).join('/'))
-      })
+      }
     }
   }
   else{

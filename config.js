@@ -19,14 +19,14 @@ exports.cloudDirectory = './files/'
 exports.users =
   {Cam: { name: 'Cameron LaFerney',
           password: 'password',
-          writePrivelege: true
+          writePermission: true
          },
    TambourineMan:   {name: 'Bob Dylan',
                     password: 'blowininthewind',
-                    writePrivelege: true
+                    writePermission: true
                    },
    BTK:   { name: 'Billy the Kid',
             password: 'fastdraw',
-            writePrivelege: false
+            writePermission: false
          }
   };

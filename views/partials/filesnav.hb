@@ -5,12 +5,14 @@
           <li class="active">
               <a href="/files/"><i class="fa fa-folder"></i> My Files</a>
           </li>
+          {{#if user.writePermission}}
           <li>
               <a href="/upload"><i class="glyphicon glyphicon-open"></i> Upload File</a>
           </li>
           <li>
               <a href="/createdirectory"><i class="fa fa-plus"></i> Create Directory</a>
           </li>
+          {{/if}}
       </ul>
   </div>
 </nav>

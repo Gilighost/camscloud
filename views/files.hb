@@ -59,10 +59,12 @@
                                 <a href='{{this}}?action=view'><span data-toggle="tooltip" title="View" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-eye-open"></i></span>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
                                 <a href='{{this}}?action=save'><span data-toggle="tooltip" title="Download" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-download"></i></span></a>
-                                <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
-                                <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href='{{this}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
+                                {{#if ../user.writePermission}}
+                                  <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+                                  <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
+                                  <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+                                  <a href='{{this}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
+                                {{/if}}
                                 <div class="clearfix"></div>
                             </div>
                         </div>
@@ -87,12 +89,14 @@
                               </div>
                             </a>
                           </div>
+                          {{#if ../user.writePermission}}
                           <div class="panel-footer">
-                              <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this.dirName}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
+                              <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this.dirName}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>                              
                               <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
                               <a href='{{this.deletehref}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
                               <div class="clearfix"></div>
                           </div>
+                          {{/if}}
                       </div>
                     </div>
                   {{/each}}
