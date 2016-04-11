@@ -35,9 +35,9 @@
                   Create directory at {{savepath}}
                 </p>
                 {{/if}}
-                {{#if created}}
-                  <div class="alert alert-success" role="alert">
-                    Successfully created <kbd>{{savepath}}{{created}}</kbd>
+                {{#if message}}
+                  <div class="alert alert-{{message.type}}" role="alert">
+                    {{message.text}} <kbd>{{savepath}}{{message.created}}</kbd>
                   </div>
                 {{/if}}
                 <!-- /.row -->
