@@ -35,9 +35,6 @@ function resetForm(withKittens){
   input.val('');
   $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
 
-  $('.new-output').velocity(
-    'scroll'
-  ), {duration: 100}
 }
 
 	function showKittens(){
@@ -69,10 +66,6 @@ function resetForm(withKittens){
 				textEffect($(line))
 			}, index * 100);
 		});
-
-		$('.new-output').velocity(
-			'scroll'
-		), {duration: 100}
 
 		setTimeout(function(){
 			var gif;
