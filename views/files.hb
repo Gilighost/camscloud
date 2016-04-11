@@ -58,7 +58,7 @@
                             <div class="panel-footer">
                                 <a href='{{this}}?action=view'><span data-toggle="tooltip" title="View" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-eye-open"></i></span>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                                <a href='{{this}}?action=download'><span data-toggle="tooltip" title="Download" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-download"></i></span></a>
+                                <a href='{{this}}?action=save'><span data-toggle="tooltip" title="Download" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-download"></i></span></a>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
                                 <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
                                 <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>

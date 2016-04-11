@@ -8,7 +8,7 @@ module.exports = function(req, res, next, path){
     res.setHeader('Content-disposition', 'attachment; filename=' + path.split('/').slice(-1))
     res.setHeader('Content-type', mimetype)
 
-    if(req.query.action == 'download'){
+    if(req.query.action == 'save'){
       var filestream = fs.createReadStream(path);
       filestream.pipe(res);
     } else if(req.query.action == 'delete'){
