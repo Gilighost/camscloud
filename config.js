@@ -4,11 +4,11 @@
  Exports: namespace object
  ********************************************************************/
 
-exports.port = 8000;
+exports.port = 8000
 
-exports.logLevel = 'dev';
+exports.logLevel = 'dev'
 
-exports.sessionSecret = 'a moose bit my sister once';
+exports.sessionSecret = 'a moose bit my sister once'
 
 exports.rootUrl = 'files/'
 
@@ -29,4 +29,4 @@ exports.users =
             password: 'fastdraw',
             writePermission: false
          }
-  };
+  }

@@ -3,7 +3,7 @@
     handle_file = require('../controllers/handle_file')
 
 module.exports = function(req, res, next) {
-  var path = '.' + req.url.split('?')[0];
+  var path = '.' + req.url.split('?')[0]
   path = decodeURIComponent(path)
   fs.access(path, fs.F_OK, function(err){
     if(!err){

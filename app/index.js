@@ -20,7 +20,7 @@ app.engine('hb', hbengine({
   partialsDir: './views/partials',
   extname: '.hb'
 }));
-app.set("view engine", "hb");
+app.set("view engine", "hb")
 
 // Configure session
 app.use(session({
@@ -30,21 +30,21 @@ app.use(session({
 }));
 
 // Parse POST requests
-app.use(parser.urlencoded({ extended: false }));
+app.use(parser.urlencoded({ extended: false }))
 
 // Logging
-app.use(morgan(config.logLevel));
+app.use(morgan(config.logLevel))
 
 // Routes
-app.use('/', require('./routes'));
+app.use('/', require('./routes'))
 
 // Fallback to static
-app.use(express.static('./public'));
+app.use(express.static('./public'))
 
 //Error 404
 app.use(function(req, res, next) {
-  res.status(404).render('notfound');
+  res.status(404).render('notfound')
 });
 
 // Export app
-module.exports = app;
+module.exports = app

@@ -8,19 +8,19 @@ var express = require('express'),
     config  = require('../config'),
     generic = require('./controllers/generic'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path')
 
-var router = express.Router();
+var router = express.Router()
 
 // Uploads
-var upload = multer({ dest: './tmp/' });
+var upload = multer({ dest: './tmp/' })
 
-router.get('/files', function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'), generic.renderTemplate('files'));
-router.get('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'),  generic.renderTemplate('files'));
+router.get('/files', function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'), generic.renderTemplate('files'))
+router.get('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/files'),  generic.renderTemplate('files'))
 
-router.post('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/post_files'));
+router.post('/files/*',function(req, res, next){generic.requireLogin(req, res, next)}, require('./controllers/post_files'))
 
-router.get('/upload', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/upload'), generic.renderTemplate('upload'));
+router.get('/upload', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/upload'), generic.renderTemplate('upload'))
 router.post('/upload',
             function(req, res, next){generic.requireLogin(req, res, next)},
             upload.any('myfile'),
@@ -28,16 +28,16 @@ router.post('/upload',
             generic.renderTemplate('upload')
 );
 
-router.get('/createdirectory', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/createdirectory'), generic.renderTemplate('createdirectory'));
+router.get('/createdirectory', function(req, res, next){generic.requireLogin(req, res, next)},require('./controllers/createdirectory'), generic.renderTemplate('createdirectory'))
 
 router.post('/login',
             require('./controllers/login'),
             generic.renderTemplate('login')
 );
-router.get('/login', generic.renderTemplate('login'));
+router.get('/login', generic.renderTemplate('login'))
 
-router.get('/logout', require('./controllers/logout'));
+router.get('/logout', require('./controllers/logout'))
 
-router.get('/',  function(req, res, next){generic.requireLogin(req, res, next)}, generic.redirect(config.cloudDirectory));
+router.get('/',  function(req, res, next){generic.requireLogin(req, res, next)}, generic.redirect(config.cloudDirectory))
 // Export
-module.exports = router;
+module.exports = router
