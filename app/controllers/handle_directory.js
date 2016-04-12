@@ -15,7 +15,7 @@ function deleteFolderRecursive(path) {
 };
 
 module.exports = function(req, res, next, path){
-  if(req.query.action == 'delete'){
+  if(req.query.action == 'deletedir'){
     if(req.session.user.writePermission){
       deleteFolderRecursive(path)
     }

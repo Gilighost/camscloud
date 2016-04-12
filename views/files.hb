@@ -91,9 +91,9 @@
                           </div>
                           {{#if ../user.writePermission}}
                           <div class="panel-footer">
-                              <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this.dirName}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>                              
+                              <a href="" data-toggle="modal" data-target="#renameModal" data-file-name="{{this.dirName}}"><span data-toggle="tooltip" title="Rename" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></span></a>
                               <span class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
-                              <a href='{{this.deletehref}}?action=delete'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
+                              <a href='{{this.deletehref}}?action=deletedir'><span data-toggle="tooltip" title="Delete" data-placement="top" class="pull-left"><i class="glyphicon glyphicon-trash"></i></span></a>
                               <div class="clearfix"></div>
                           </div>
                           {{/if}}

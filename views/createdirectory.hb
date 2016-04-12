@@ -37,6 +37,7 @@
                 {{/if}}
                 {{#if message}}
                   <div class="alert alert-{{message.type}}" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {{message.text}} <kbd>{{savepath}}{{message.created}}</kbd>
                   </div>
                 {{/if}}

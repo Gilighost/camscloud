@@ -35,13 +35,21 @@
                   Upload to {{savepath}}
                 </p>
                 {{/if}}
-                {{#if uploads}}
-                  <div class="alert alert-success" role="alert">
-                    Successfully uploaded 
-                    {{#each uploads}}
-                       <kbd>{{this}}</kbd>
-                    {{/each}}
+                {{#if message}}
+                  <div class="alert alert-{{message.type}}" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{message.text}}
                   </div>
+                {{else}}
+                  {{#if uploads}}
+                    <div class="alert alert-success" role="alert">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      Successfully uploaded
+                      {{#each uploads}}
+                         <kbd>{{this}}</kbd>
+                      {{/each}}
+                    </div>
+                  {{/if}}
                 {{/if}}
                 <!-- /.row -->
                 <form method="POST" enctype="multipart/form-data">

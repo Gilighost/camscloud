@@ -6,36 +6,55 @@ Additional resources used:
   -http://codepen.io/team/nclud/pen/GJpdVo for 404 page
   -Node module Mimetypes to get the mime types of files for the header
 
-
 Testing:
-  Go to the URL http://localhost:8000 or http://localhost:8000/files/
+  -Go to the URL http://localhost:8000 or http://localhost:8000/files/
 
-  It will redirect you to the login page.
+  -It will redirect you to the login page.
 
-  Log in to application as either of the following:
+  -Log in to application as either of the following:
       Username: Cam, Password: password
       Username: TambourineMan, Password: blowininthewind
 
-  Logging in will direct you to the files page which lists the contents of the root storage directory.
-  Visit the same URL in a second window and click "Log out" in the dropdown menu from the user name in the top right.
-  Log in as
+  -Logging in will direct you to the files page which lists the contents of the root storage directory.
+
+  Just files:
+    -Click the name or the eye icon to view the file.
+    -click the download symbol to download file
+  Just directories:
+    -click the name to navigate to that subdirectory
+  Both:
+    -click the pencil to rename
+    -click trashcan to delete
+
+  -Click "Upload File" on navbar to upload a file
+  -Click "Create Directory" on navbar to create a directory
+
+  -Visit the same URL in a second window and click "Log out" in the dropdown menu from the user name in the top right.
+  -Log in as
       Username: BTK, Password: fastdraw
 
-  You should see the files, but have no way of uploading a file or creating a directory.
+  -You should see the files, but have no way of uploading a file or creating a directory.
 
-  Return to the first window and click "Upload file".
-  It should redirect you to the Files page, with no way of uploading a file or creating a directory.
+  -go to http://localhost:8000/createdirectory?name=poodle in that window
+  -It will not allow creation of directory
+
+  -Return to the first window and click "Upload file".
+  -It should redirect you to the Files page, with no way of uploading a file or creating a directory.
 
 Design:
-  Each request has a controller for it, which handles what should happen from there.
-  Redirects are used to make sure correct content is being shown.
+  -Each request has a controller for it, which handles what should happen from there.
+  -Redirects are used to make sure correct content is being shown.
 
 Partial:
-  I have several Navigation partials, one for each page, and one that the other Nav partials use
-  These are helpful because i can plug them in to any other template to give it a navigaton bar
+  -I have several Navigation partials, one for each page, and one that the other nav partials use
+  -These are helpful because I can plug them in to any other template to give it a navigaton bar
+
+Problems:
+  -Uploading a file with same name as directory or creating directory with same name as file does not work
+    -this seems like it's something fs doesn't allow, or maybe I just couldn't figure it out
 
 If I had more time:
-  Id get the upload/new directory done through modals rather than separate pages.
+  -Id get the upload/new directory done through modals rather than separate pages.
 
 Strengths:
   -Design, I used Bootstrap for all of my templates for a professional look.
@@ -47,3 +66,5 @@ Strengths:
     to any parent directory.
   -If the user tries to upload a file with the same name as another file, it will get renamed
     to a number with the file name
+    -same with creating directories
+  -My project is conveniently stored on Cam'c Cloud for you in the camscloud directory

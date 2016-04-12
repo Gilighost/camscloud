@@ -3,7 +3,6 @@ exports.renderTemplate = function renderTemplate(name) {
   return function (req, res) {
     var obj = {}
     obj.user = req.session.user
-    console.log(obj.user)
     res.render(name, obj)
   }
 }

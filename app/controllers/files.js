@@ -1,4 +1,4 @@
-var fs = require('fs'),
+ var fs = require('fs'),
     handle_directory = require('../controllers/handle_directory'),
     handle_file = require('../controllers/handle_file')
 
